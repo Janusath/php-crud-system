@@ -68,7 +68,7 @@ $result = mysqli_query($conn, $sql);
                     <a href='edit.php?id=" . $row['id'] . "' class='link-dark'>
                         <i class='fa-solid fa-pen-to-square fs-5 me-3'></i> Edit
                     </a>
-                    <a href='delete.php?id=" . $row['id'] . "' class='link-dark'>
+                    <a href='delete.php?id=" . $row['id'] . "' class='link-dark' onclick='return confirmDelete()'>
                         <i class='fa-solid fa-trash fs-5'></i> Delete
                     </a>
                   </td>";
@@ -95,7 +95,7 @@ $result = mysqli_query($conn, $sql);
             //             <a href='edit.php?id=" . $row['id'] . "' class='link-dark'>
             //                 <i class='fa-solid fa-pen-to-square fs-5 me-3'></i> Edit
             //             </a>
-            //             <a href='delete.php?id=" . $row['id'] . "' class='link-dark'>
+            //             <a href='delete.php?id=" . $row['id'] . "' class='link-dark' onclick='return confirmDelete()'>
             //                 <i class='fa-solid fa-trash fs-5'></i> Delete
             //             </a>
             //         </td>";
@@ -123,7 +123,7 @@ $result = mysqli_query($conn, $sql);
         //             <a href='edit.php?id=" . $row['id'] . "' class='link-dark'>
         //                 <i class='fa-solid fa-pen-to-square fs-5 me-3'></i> Edit
         //             </a>
-        //             <a href='delete.php?id=" . $row['id'] . "' class='link-dark'>
+        //             <a href='delete.php?id=" . $row['id'] . "' class='link-dark' onclick='return confirmDelete()'>
         //                 <i class='fa-solid fa-trash fs-5'></i> Delete
         //             </a>
         //         </td>";
@@ -131,6 +131,11 @@ $result = mysqli_query($conn, $sql);
         // }
         ?>
 
+      <script>
+        function confirmDelete() {
+          return confirm("Are you sure you want to delete this record?");
+        }
+      </script>
 
       </tbody>
     </table>
